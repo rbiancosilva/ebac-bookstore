@@ -6,3 +6,5 @@ class Category(models.Model):
     active = models.BooleanField(default=True)
     def __unicode__(self):
         return self.title
+    def __str__(self):
+        return self.title
