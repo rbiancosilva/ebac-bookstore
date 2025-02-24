@@ -1,4 +1,5 @@
 import factory
+from django.contrib.auth.models import User
 from product.models import Category, Product
 class CategoryFactory(factory.django.DjangoModelFactory):
     title = factory.Faker("pystr")
@@ -20,3 +21,10 @@ class ProductFactory(factory.django.DjangoModelFactory):
                 self.category.add(category)
     class Meta:
         model = Product
+
+class UserFactory(factory.django.DjangoModelFactory):
+    username = factory.Faker("pystr")
+    email = factory.Faker("pystr")
+
+    class Meta:
+        model = User
